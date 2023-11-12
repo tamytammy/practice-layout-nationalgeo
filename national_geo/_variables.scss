@@ -1,0 +1,49 @@
+//google font
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+
+//main-color
+$white:#fff;
+$black:#000;
+$yellow:#ffcc00;
+
+@mixin hover-scale{
+    transition: all .3s;
+    &:hover{
+        transform: scale(1.1);
+    }
+}
+
+@mixin respond($device){
+    @if $device == pad{
+        @media (max-width:990px){@content}
+    }
+    @if $device == phone{
+        @media (max-width:600px){@content}
+    }
+}
+
+@mixin title{
+width: 100%;
+text-align: center;
+position: relative;
+padding: .5rem;
+h1{
+   text-transform: uppercase;
+   span{
+    font-size: .8rem;
+   }
+   }
+&::after{
+    content: '';
+ height: 3px;
+    width: 50px;
+       background-color: $yellow;
+   position: absolute;
+      bottom: 0%;
+right: 48%;
+                }
+
+};
+                
+            
