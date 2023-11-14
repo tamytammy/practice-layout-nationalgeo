@@ -7,12 +7,7 @@ $white:#fff;
 $black:#000;
 $yellow:#ffcc00;
 
-@mixin hover-scale{
-    transition: all .3s;
-    &:hover{
-        transform: scale(1.1);
-    }
-}
+
 
 @mixin respond($device){
     @if $device == pad{
@@ -21,8 +16,10 @@ $yellow:#ffcc00;
     @if $device == phone{
         @media (max-width:600px){@content}
     }
-}
+};
 
+
+// section 標題標籤樣式設定
 @mixin title{
 width: 100%;
 text-align: center;
@@ -45,5 +42,54 @@ right: 48%;
                 }
 
 };
+
+@mixin i-yellow($font-size){
+    font-size: $font-size;
+    color: $black;
+    transition: all .3s;
+    &:hover{
+    color: $yellow;
+    }
+};
+@mixin flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+};
+
+
+.more-btn{
+    display: inline-block;
+    text-decoration: none;
+    background-color: #ffcc00;
+    color: #000;
+    font-weight: 700;
+    padding: .5rem 1.5rem;
+    transition: all .3s ease-in;
+    &:hover{
+    background-color: #000;
+    color: #fff;
+    }
+}
+.more-underline-btn{
+          display: inline-block;
+          text-decoration: none;
+          color: #000;
+          font-weight: 700;
+          position: relative;
+          padding: .3rem 0;
+            border-bottom: 3px solid $yellow;
+      }
+//font-color-yellow
+.attention{
+    color: #ffcc00;
+}
+//text-uppercase
+.text-upper{
+    text-transform: uppercase;
+}
+
+
                 
             

@@ -1,4 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+.more-btn {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #ffcc00;
+  color: #000;
+  font-weight: 700;
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3s ease-in;
+}
+.more-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.more-underline-btn {
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+  font-weight: 700;
+  position: relative;
+  padding: 0.3rem 0;
+  border-bottom: 3px solid #ffcc00;
+}
+
+.attention {
+  color: #ffcc00;
+}
+
+.text-upper {
+  text-transform: uppercase;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -134,10 +166,15 @@ html body .header__menu-btn {
   border: none;
   background-color: transparent;
   cursor: pointer;
+  transition: all 0.3s;
 }
 html body .header__menu-btn i {
   font-size: 3rem;
   color: #000;
+  transition: all 0.3s;
+}
+html body .header__menu-btn i:hover {
+  color: #ffcc00;
 }
 html body .header__logo img {
   width: 45%;
@@ -158,8 +195,15 @@ html body .header .nav ul li a {
   display: inline-block;
   text-decoration: none;
   color: #000;
-  font-size: 1.5rem;
   margin-right: 1.5rem;
+}
+html body .header .nav ul li a i {
+  font-size: 1.5rem;
+  color: #000;
+  transition: all 0.3s;
+}
+html body .header .nav ul li a i:hover {
+  color: #ffcc00;
 }
 html body .main .news {
   width: 100%;
@@ -196,7 +240,6 @@ html body .main .news__topic {
   width: 100%;
   height: 100%;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
@@ -226,9 +269,6 @@ html body .main .news__topic-main:hover {
 html body .main .news__topic-main h4 {
   text-transform: uppercase;
   padding: 0 0.5rem;
-}
-html body .main .news__topic-main h4 span {
-  color: #ffcc00;
 }
 html body .main .news__topic-main h3 {
   padding: 0.5rem;
@@ -279,9 +319,6 @@ html body .main .news__topic-aside .aside a {
 html body .main .news__topic-aside .aside a .aside-text {
   width: 100%;
 }
-html body .main .news__topic-aside .aside a .aside-text h4 span {
-  color: #ffcc00;
-}
 html body .main .news__topic-aside .aside a .aside-text h3 {
   font-size: 1.2rem;
 }
@@ -327,9 +364,6 @@ html body .main .news__topic-secondary .second a .second-text {
 html body .main .news__topic-secondary .second a .second-text h4 {
   padding: 0.3rem;
 }
-html body .main .news__topic-secondary .second a .second-text h4 span {
-  color: #ffcc00;
-}
 html body .main .news__topic-secondary .second a .second-text h3 {
   padding: 0.3rem;
 }
@@ -371,12 +405,12 @@ html body .main .events__content {
   height: auto;
 }
 html body .main .events__content .events-box {
-  width: 30%;
-  height: 90vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  width: 30%;
+  height: 90vh;
   padding: 3rem 1.5rem;
 }
 @media (max-width: 600px) {
@@ -424,31 +458,17 @@ html body .main .events__content .events-box a .events-btn span {
   text-transform: uppercase;
   font-weight: 500;
 }
-html body .main .events__content .events-box .box-1 {
+html body .main .events__content-1 {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url(../images/pro-img-1.jpg);
 }
-html body .main .events__content .events-box .box-2 {
+html body .main .events__content-2 {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url(../images/pro-img-2.jpg);
 }
-html body .main .events__content .events-box .box-3 {
+html body .main .events__content-3 {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url(../images/pro-img-3.png);
 }
 html body .main .events__morebtn {
   text-align: center;
-}
-html body .main .events__morebtn a.more {
-  display: inline-block;
-  text-decoration: none;
-  color: #000;
-  text-transform: uppercase;
-  font-weight: 700;
-  text-align: center;
-  border-bottom: 3px solid #ffcc00;
-}
-html body .main .events__morebtn a.more i {
-  color: #000;
-  font-size: 1rem;
-  font-weight: 700;
 }
 html body .main .videos {
   width: 100%;
@@ -495,27 +515,8 @@ html body .main .videos__main-box {
 html body .main .videos__main-box h4 {
   padding: 1rem 0;
 }
-html body .main .videos__main-box h4 span {
-  color: #ffcc00;
-}
 html body .main .videos__main-box h3 {
   padding: 1rem 0;
-}
-html body .main .videos__main-box a {
-  display: inline-block;
-  text-decoration: none;
-  color: #000;
-  background-color: #ffcc00;
-  text-transform: uppercase;
-  text-align: center;
-  padding: 0.5rem 1rem;
-  font-size: 1.2rem;
-  font-weight: 300;
-  transition: all 0.3s;
-}
-html body .main .videos__main-box a:hover {
-  color: #fff;
-  background-color: #000;
 }
 html body .main .videos__small {
   width: 100%;
@@ -653,7 +654,6 @@ html body .main .maga__content-text .pointer {
   cursor: pointer;
 }
 html body .main .maga__content-text .pointer h6 {
-  color: #ffcc00;
   font-size: 1rem;
   padding: 0.5rem 0;
 }
@@ -751,7 +751,6 @@ html body .main .issue__content-text .pointer {
   cursor: pointer;
 }
 html body .main .issue__content-text .pointer h6 {
-  color: #ffcc00;
   font-size: 1rem;
   padding: 0.5rem 0;
 }
@@ -770,19 +769,6 @@ html body .main .issue__content-text .pointer ul li {
   line-height: 1.5;
   font-weight: 700;
   text-decoration: underline;
-}
-html body .main .issue__content-text .pointer a.content {
-  display: inline-block;
-  text-decoration: none;
-  color: #000;
-  background-color: #ffcc00;
-  padding: 0.5rem 1rem;
-  font-weight: 700;
-  transition: all 0.3s;
-}
-html body .main .issue__content-text .pointer a.content:hover {
-  color: #fff;
-  background-color: #000;
 }
 html body .main .books {
   width: 100%;
@@ -842,32 +828,9 @@ html body .main .books__content .content-box .content-text h3 {
 html body .main .books__content .content-box .content-btn {
   text-align: center;
 }
-html body .main .books__content .content-box .content-btn a {
-  display: inline-block;
-  text-decoration: none;
-  padding: 0.5rem 1.5rem;
-  font-weight: 500;
-  color: #000;
-  background-color: #ffcc00;
-  text-transform: uppercase;
-  transition: all 0.3s;
-}
-html body .main .books__content .content-box .content-btn a:hover {
-  color: #fff;
-  background-color: #000;
-}
 html body .main .books__more {
   width: 100%;
   text-align: center;
-}
-html body .main .books__more a {
-  display: inline-block;
-  text-decoration: none;
-  color: #000;
-  text-transform: uppercase;
-  border-bottom: 3px solid #ffcc00;
-  padding: 0.3rem 0;
-  font-weight: 500;
 }
 html body .main .susp {
   background-color: #eee;

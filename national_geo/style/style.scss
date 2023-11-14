@@ -138,9 +138,9 @@ body{
                 border: none;
                 background-color: transparent;
                 cursor: pointer;
+                transition: all .3s;
                 i{
-                font-size: 3rem;
-                color: $black;
+                    @include i-yellow(3rem);
                 }
             }
         }
@@ -162,18 +162,21 @@ body{
             padding: 0 2rem 0 .5rem;
                 li{
                     list-style: none;
-                    
                     a{
                         display: inline-block;
                         text-decoration: none;
                         color: $black;
-                        font-size: 1.5rem;
                         margin-right: 1.5rem;
+                        i{
+                            @include i-yellow(1.5rem);
+                        }
                     }
                 }
             }
         }
     }
+
+
     .main{
         .news{
             width: 100%;
@@ -191,7 +194,6 @@ body{
                 width: 100%;
                 height: 100%;
                 display: flex;
-                flex-wrap: wrap;
                 justify-content: space-around;
                 align-items: center;
                 flex-wrap: wrap;
@@ -199,14 +201,17 @@ body{
                 &-main{
                 width: 55%;
                 height: 65vh;
+
                 display: flex;
                 flex-direction: column;
                 justify-content: end;
                 align-items: start;
+
                 background: linear-gradient(to bottom, transparent 0%, rgba($black,.8) 100%), url(../images/img-1.jpg);
                 background-position: center;
                 background-size: cover;
                 padding: 1rem;
+
                 transition: background-size .4s;
                 @include respond(phone){
                     width: 100%;
@@ -217,9 +222,6 @@ body{
                     h4{
                     text-transform: uppercase;
                     padding: 0 .5rem;
-                    span{
-                        color: $yellow;
-                    }
                     }
                     h3{
                         padding: .5rem;
@@ -254,6 +256,7 @@ body{
                         display: flex;
                         flex-wrap: wrap;
                         justify-content: space-between;
+
                         margin-bottom: 1rem;
                         img{
                             width: 35%;
@@ -266,11 +269,6 @@ body{
                             align-items: center;
                             .aside-text{
                                 width: 100%;
-                                h4{
-                                span{
-                                color: $yellow;
-                                }
-                                }
                                 h3{
                                     font-size: 1.2rem;
                                 }
@@ -278,6 +276,7 @@ body{
                         }
                         }
                 }
+
                 &-secondary{
                     width: 100%;
                     padding: 1rem;
@@ -303,7 +302,6 @@ body{
                                     img{
                                         width: 100%;
                                     }
-                                    .five{}
                                     .six{
                                         transform: translateY(-100px);
                                     }
@@ -317,9 +315,6 @@ body{
                                 text-transform: uppercase;
                                 h4{
                                 padding: .3rem;
-                                    span{
-                                        color: $yellow;
-                                    }
                                 }
                                 h3{
                                     padding: .3rem;
@@ -346,20 +341,13 @@ body{
                 @include title;
             }
             &__content{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-wrap: wrap;
+                @include flex-center;
                 height: auto;
                 .events-box{
+                    @include flex-center;
                     width: 30%;
                     height: 90vh;
-
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    flex-wrap: wrap;
-
+                    
                     padding: 3rem 1.5rem;
                     @include respond(phone){
                         width: 100%;
@@ -408,36 +396,35 @@ body{
                         }
                         }
                     }
-                    .box-1{
+            
+                    }
+                    //個別背景圖示設定
+                    &-1{
                         background-image:linear-gradient(to bottom, rgba($black, .5) 0%,rgba($black, .5) 100%),url(../images/pro-img-1.jpg);
                     }
-                    .box-2{
+                    &-2{
                         background-image:linear-gradient(to bottom, rgba($black, .5) 0%,rgba($black, .5) 100%),url(../images/pro-img-2.jpg);
                     }
-                    .box-3{
+                    &-3{
                         background-image:linear-gradient(to bottom, rgba($black, .5) 0%,rgba($black, .5) 100%),url(../images/pro-img-3.png);
-                    }
-
-                    
-                    
                     }
                 }
             &__morebtn{
                 text-align: center;
-                a.more{
-                    display: inline-block;
-                    text-decoration: none;
-                    color: #000;
-                    text-transform: uppercase;
-                    font-weight: 700;
-                    text-align: center;
-                    border-bottom: 3px solid $yellow;
-                    i{
-                        color: #000;
-                        font-size: 1rem;
-                        font-weight: 700;
-                    }
-                }
+                // a.more{
+                //     display: inline-block;
+                //     text-decoration: none;
+                //     color: #000;
+                //     text-transform: uppercase;
+                //     font-weight: 700;
+                //     text-align: center;
+                //     border-bottom: 3px solid $yellow;
+                //     i{
+                //         color: #000;
+                //         font-size: 1rem;
+                //         font-weight: 700;
+                //     }
+                // }
             }
             }
         .videos{
@@ -464,29 +451,9 @@ body{
                     padding: 2.5rem;
                     h4{
                         padding: 1rem 0;
-                        span{
-                            color: $yellow;
-                        }
                     }
                     h3{
                         padding: 1rem 0;
-                    }
-                    a{
-                        display: inline-block;
-                        text-decoration: none;
-                        color: #000;
-                        background-color: $yellow;
-                        text-transform: uppercase;
-                        text-align: center;
-                        padding: .5rem 1rem;
-                        font-size: 1.2rem;
-                        font-weight: 300;
-                        transition: all .3s;
-                        &:hover{
-                            color: #fff;
-                            background-color: #000;
-                        }
-
                     }
 
                 }
@@ -602,7 +569,6 @@ body{
                         color: #fff;
                         cursor: pointer;
                         h6{
-                            color: $yellow;
                             font-size: 1rem
                             ;padding: .5rem 0;
                         }
@@ -678,7 +644,6 @@ body{
                         color: #fff;
                         cursor: pointer;
                         h6{
-                            color: $yellow;
                             font-size: 1rem
                             ;padding: .5rem 0;
                         }
@@ -698,19 +663,19 @@ body{
                                 text-decoration: underline;
                             }
                         }
-                        a.content{
-                            display: inline-block;
-                            text-decoration: none;
-                            color: #000;
-                            background-color: $yellow;
-                            padding: .5rem 1rem;
-                            font-weight: 700;
-                            transition: all .3s;
-                            &:hover{
-                                color: #fff;
-                                background-color: #000;
-                            }
-                        }
+                        // a.content{
+                        //     display: inline-block;
+                        //     text-decoration: none;
+                        //     color: #000;
+                        //     background-color: $yellow;
+                        //     padding: .5rem 1rem;
+                        //     font-weight: 700;
+                        //     transition: all .3s;
+                        //     &:hover{
+                        //         color: #fff;
+                        //         background-color: #000;
+                        //     }
+                        // }
                     }
                 }
             }
@@ -727,10 +692,7 @@ body{
             }
             &__content{
                 width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-wrap: wrap;
+                @include flex-center;
                 .content-box{
                     width: 30%;
                     height: 100%;
@@ -753,20 +715,6 @@ body{
                     }
                     .content-btn{
                     text-align: center;
-                        a{
-                            display: inline-block;
-                            text-decoration: none;
-                            padding: .5rem 1.5rem;
-                            font-weight: 500;
-                            color: #000;
-                            background-color: $yellow
-                            ;text-transform: uppercase;
-                            transition: all .3s;
-                            &:hover{
-                                color: #fff;
-                                background-color: #000;
-                            }
-                        }
                     }
                 }
             }
@@ -774,15 +722,6 @@ body{
             &__more{
                 width: 100%;
                 text-align: center;
-                a{
-                    display: inline-block;
-                    text-decoration: none;
-                    color: #000;
-                    text-transform: uppercase;
-                    border-bottom: 3px solid $yellow;
-                    padding: .3rem 0;
-                    font-weight: 500;
-                }
             }
         }
 
